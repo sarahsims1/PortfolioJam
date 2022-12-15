@@ -6,8 +6,6 @@ public class CharacterController : MonoBehaviour
 {
     private Rigidbody rigidBody;
 
-    private bool grounded;
-
     public float ogFling;
     public float jumpHeight;
 
@@ -15,8 +13,11 @@ public class CharacterController : MonoBehaviour
     public float strafeCooldown;
     private float timeSinceLastStrafe;
 
-    private float jumpBuffer;
-    public float jumpGrace;
+    private float strafeTime;
+    public float strafeDuration;
+
+    public float jumpBuffer;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -25,26 +26,25 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        timeSinceLastStrafe += 1 * Time.deltaTime;
-
-        if(Input.GetKeyDown(KeyCode.Space) && grounded == true)
+        if(Input.GetKeyDown(KeyCode.Space) && Grounded() == true)
         {
             rigidBody.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
-        if (timeSinceLastStrafe >= strafeCooldown)
+        transform.position += new Vector3(strafeSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);    
+    }
+
+    private bool Grounded()
+    {
+        var groundDistCheck = GetComponent<CapsuleCollider>().height / 2 + jumpBuffer;
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, Vector3.down, out hit, groundDistCheck))
         {
-            rigidBody.AddForce(new Vector3(Input.GetAxis("Horizontal") * strafeSpeed, 0, 0), ForceMode.Impulse);
-            timeSinceLastStrafe = 0;
+            return true;
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        grounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        grounded = false;
+        else
+        {
+            return false;
+        }
     }
 }

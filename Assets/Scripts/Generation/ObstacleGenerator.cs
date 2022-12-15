@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
-    public float MaxTime;
-    private float time;
+    public GameObject[] platforms;
+    public Vector2 obstacleRandomness;
+    public float distanceToSpawn;
+    private GameObject obstacle;
+    private GameObject queuedObstacle;
 
-    public GameObject[] obstacle;
-    void Update()
+    void Start()
     {
-        time += Time.deltaTime;
-        if(time>=MaxTime)
+        obstacle = Instantiate(platforms[0], transform.localPosition + new Vector3(Random.Range(obstacleRandomness.x, obstacleRandomness.y), 0, Random.Range(obstacleRandomness.x, obstacleRandomness.y)), transform.rotation);
+        queuedObstacle = platforms[Random.Range(0, platforms.Length)];
+    }
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, obstacle.transform.position) > distanceToSpawn)
         {
-            Instantiate(obstacle[0], transform.localPosition - new Vector3(Random.Range(-20f, 20f), 0, 0), transform.rotation);
-            time = 0;
+            SpawnNew();
         }
+    }
+
+    void SpawnNew()
+    {
+        Vector3 spawnPoint = transform.localPosition + new Vector3(Random.Range(obstacleRandomness.x, obstacleRandomness.y), 0, Random.Range(obstacleRandomness.x, obstacleRandomness.y));
+        obstacle = Instantiate(queuedObstacle.gameObject, spawnPoint, transform.rotation);
+        queuedObstacle = platforms[Random.Range(0, platforms.Length)];
     }
 }
