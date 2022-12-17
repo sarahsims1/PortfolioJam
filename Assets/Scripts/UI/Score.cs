@@ -5,7 +5,7 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private float scoreAct;
+    public static float scoreAct;
     public TMP_Text score;
     public TMP_Text update;
     public Animator updateAnim;
@@ -14,10 +14,20 @@ public class Score : MonoBehaviour
 
     void Start()
     {
+        scoreAct = 0;
         ObstacleSlow.ObstacleHit += Oof;
         updateAnim = update.gameObject.GetComponent<Animator>();
     }
 
+    private void OnDestroy()
+    {
+        ObstacleSlow.ObstacleHit -= Oof;
+    }
+    private void Update()
+    {
+        scoreAct += 0.05f * levelManager.speed;
+        score.text = Mathf.RoundToInt(scoreAct).ToString();
+    }
     void Oof()
     {
         if (obstacleCooldown)
