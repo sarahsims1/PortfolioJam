@@ -10,11 +10,6 @@ public class CharacterController : MonoBehaviour
     public float jumpHeight;
 
     public float strafeSpeed;
-    public float strafeCooldown;
-    private float timeSinceLastStrafe;
-
-    private float strafeTime;
-    public float strafeDuration;
 
     public float jumpBuffer;
 
@@ -30,7 +25,7 @@ public class CharacterController : MonoBehaviour
         {
             rigidBody.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
-        transform.position += new Vector3(strafeSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);    
+        rigidBody.AddForce(new Vector3(strafeSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0), ForceMode.Impulse);    
     }
 
     private bool Grounded()
