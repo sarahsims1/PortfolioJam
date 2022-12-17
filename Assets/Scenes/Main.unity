@@ -390,7 +390,6 @@ MonoBehaviour:
   lowGravityPlatform:
   - {fileID: 7784866953594433121, guid: 5f7aae68d1c87c34cbe0c7c9ba859b3c, type: 3}
   - {fileID: 7784866953594433121, guid: 87bbf8ec6738d864ab9287c2c651468e, type: 3}
-  - {fileID: 7784866953594433121, guid: 7b7070bca6c9cb94f9e3a39e7666fbcc, type: 3}
   distanceToSpawn: 25
 --- !u!4 &144445775
 Transform:
@@ -1276,7 +1275,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ogFling: 1500
   jumpHeight: 25
-  strafeSpeed: 80
+  strafeSpeed: 5
+  MaxStrafeSpeed: 15
+  slowDown: 0.5
   jumpBuffer: 0.5
 --- !u!54 &702444499
 Rigidbody:
