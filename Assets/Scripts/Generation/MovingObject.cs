@@ -9,7 +9,7 @@ public class MovingObject : MonoBehaviour
     {
         StartCoroutine(CanISpeakToTheManager());
     }
-    void Update()
+    void FixedUpdate()
     {
         if (levelManager == null) return;
         gameObject.transform.position += new Vector3(0, 0, -levelManager.speed * Time.deltaTime);

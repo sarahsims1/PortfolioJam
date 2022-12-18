@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class Decimator : MonoBehaviour
 {
+    public delegate void FellToDeath();
+    public static FellToDeath Dead;
+
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.tag == "Player")
+        {
+            Dead();
+        }
+        else
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

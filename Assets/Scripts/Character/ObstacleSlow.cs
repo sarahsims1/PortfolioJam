@@ -10,6 +10,10 @@ public class ObstacleSlow : MonoBehaviour
     public float hitDistance;
     public float destroyDistance;
 
+    public Animator swing;
+
+    public GameObject explosion;
+
 
     private void Update()
     {
@@ -22,9 +26,13 @@ public class ObstacleSlow : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Destroy(hit.collider.gameObject);
+                Instantiate(explosion, hit.collider.gameObject.transform.position, transform.rotation);
+                Destroy(hit.collider.gameObject);  
             }
         }
-
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            swing.Play("swing");
+        }
     }
 }

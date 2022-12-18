@@ -27,13 +27,13 @@ public class CharacterController : MonoBehaviour
         {
             rigidBody.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
-        if (Input.GetAxis("Horizontal") != 0f && rigidBody.velocity.x < MaxStrafeSpeed && rigidBody.velocity.x > -MaxStrafeSpeed)
+        if (Input.GetAxis("Horizontal") != 0f)
         {
-            rigidBody.AddForce(new Vector3(strafeSpeed * Input.GetAxis("Horizontal"), 0, 0), ForceMode.VelocityChange);
+            rigidBody.velocity = (new Vector3(strafeSpeed * Input.GetAxis("Horizontal"), rigidBody.velocity.y));
         }
-        else
+        else 
         {
-            rigidBody.velocity -= (new Vector3(slowDown * Time.deltaTime, 0, 0));
+            rigidBody.velocity -= (new Vector3(rigidBody.velocity.x * slowDown, 0, 0));
         }
     }
 
