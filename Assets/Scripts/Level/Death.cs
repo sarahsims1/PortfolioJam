@@ -22,11 +22,13 @@ public class Death : MonoBehaviour
         dangerCoolDown = false;
         timeSpent = 0;
         ObstacleSlow.ObstacleHit += DeathApproaches;
+        Decimator.Dead += DoNotFearTheReaper;
     }
 
     private void OnDestroy()
     {
         ObstacleSlow.ObstacleHit -= DeathApproaches;
+        Decimator.Dead -= DoNotFearTheReaper;
     }
     // Update is called once per frame
     void Update()

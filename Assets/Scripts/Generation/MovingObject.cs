@@ -5,13 +5,19 @@ using UnityEngine;
 public class MovingObject : MonoBehaviour
 {
     public LevelManager levelManager;
-    private void Awake()
+    private void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
+        StartCoroutine(CanISpeakToTheManager());
     }
-    void Update()
+    void FixedUpdate()
     {
         if (levelManager == null) return;
         gameObject.transform.position += new Vector3(0, 0, -levelManager.speed * Time.deltaTime);
+    }
+
+    private IEnumerator CanISpeakToTheManager()
+    {
+        yield return new WaitUntil(() => FindObjectOfType<LevelManager>() != null);
+        levelManager = FindObjectOfType<LevelManager>();
     }
 }
