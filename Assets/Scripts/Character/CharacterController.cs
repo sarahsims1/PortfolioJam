@@ -6,12 +6,12 @@ public class CharacterController : MonoBehaviour
 {
     private Rigidbody rigidBody;
 
-    public float ogFling;
     public float jumpHeight;
 
     public float strafeSpeed;
     public float MaxStrafeSpeed;
     public float slowDown;
+    public float downPull;
 
     public float jumpBuffer;
 
@@ -20,13 +20,16 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        rigidBody.AddForce(new Vector3(0, ogFling, ogFling));
 
         footstepSound = FMODUnity.RuntimeManager.CreateInstance("event:/Footsteps");
     }
 
     void Update()
     {
+        if(!Grounded() && !Staging.lowGravity && !Input.GetKey(KeyCode.Space))
+        {
+            rigidBody.AddForce(Vector3.down * downPull);
+        }
         if (Input.GetKeyDown(KeyCode.Space) && Grounded() == true)
         {
             rigidBody.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
