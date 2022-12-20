@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class Death : MonoBehaviour
 {
     public Animator volume;
-
     public float dangerTime;
     private float timeSpent;
     public static bool inDanger;
@@ -49,10 +48,9 @@ public class Death : MonoBehaviour
         if (!inDanger)
         {
             inDanger = true;
-            dangerCoolDown = false;
-            StartCoroutine(StartAnimation());
+            volume.Play("fadeDefault");
         }
-        else if (dangerCoolDown)
+        else 
         {
             DoNotFearTheReaper();
         }
@@ -60,16 +58,9 @@ public class Death : MonoBehaviour
 
     private void DoNotFearTheReaper()
     {
-        levelManager.speed = 0;
-        levelManager.targetSpeed = 0;
+        LevelManager.speed = 0;
+        LevelManager.targetSpeed = 0;
         if (resetScreen != null)resetScreen.SetActive(true);
     }
 
-    private IEnumerator StartAnimation()
-    {
-        volume.SetBool("start", true);
-        yield return new WaitForSeconds(3f);
-        dangerCoolDown = true;
-        volume.SetBool("start", false);
-    }
 }

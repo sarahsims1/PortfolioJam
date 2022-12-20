@@ -25,25 +25,14 @@ public class Score : MonoBehaviour
     }
     private void Update()
     {
-        scoreAct += 0.05f * levelManager.speed;
+        scoreAct += 0.05f * LevelManager.speed;
         score.text = Mathf.RoundToInt(scoreAct).ToString();
     }
     void Oof()
     {
-        if (obstacleCooldown)
-        {
-            scoreAct = scoreAct - 1000f;
-            update.text = "Oof!\n-1000";
-            StartCoroutine(AnimationPlay());
-            obstacleCooldown = false;
-        }
+        scoreAct = scoreAct - 1000f;
+        update.text = "Oof!\n-1000";
+        updateAnim.Play("oof");
     }
 
-    private IEnumerator AnimationPlay()
-    {     
-        updateAnim.SetBool("start", true);
-        yield return new WaitForSeconds(1f);
-        updateAnim.SetBool("start", false);
-        obstacleCooldown = true;
-    }
 }

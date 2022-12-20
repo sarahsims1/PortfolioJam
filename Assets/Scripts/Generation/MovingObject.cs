@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
-    public LevelManager levelManager;
-    private void Start()
+    void Update()
     {
-        StartCoroutine(CanISpeakToTheManager());
-    }
-    void FixedUpdate()
-    {
-        if (levelManager == null) return;
-        gameObject.transform.position += new Vector3(0, 0, -levelManager.speed * Time.deltaTime);
+        Move();
     }
 
-    private IEnumerator CanISpeakToTheManager()
+    private void Move()
     {
-        yield return new WaitUntil(() => FindObjectOfType<LevelManager>() != null);
-        levelManager = FindObjectOfType<LevelManager>();
+        var movePoint = Vector3.forward * -LevelManager.speed * Time.deltaTime;
+        transform.Translate(movePoint, Space.World);
     }
 }

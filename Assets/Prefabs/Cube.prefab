@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1265265484297327126}
   - component: {fileID: 6435347267232220205}
   - component: {fileID: 6435347267232220202}
-  - component: {fileID: 1919921781375135628}
-  - component: {fileID: -4180424441909216035}
+  - component: {fileID: 8821405796510369128}
+  - component: {fileID: 7590451609490398241}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,10 +63,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 224c145656a9c5d49b45fccd7a9382b2, type: 3}
-  - {fileID: 6034957751646507721, guid: 224c145656a9c5d49b45fccd7a9382b2, type: 3}
-  - {fileID: 8748892135801146194, guid: 224c145656a9c5d49b45fccd7a9382b2, type: 3}
-  - {fileID: 5775865398287329665, guid: 224c145656a9c5d49b45fccd7a9382b2, type: 3}
+  - {fileID: 2100000, guid: 6a51d10aeb9b76b4b8633b180686f067, type: 2}
+  - {fileID: 2100000, guid: 6a51d10aeb9b76b4b8633b180686f067, type: 2}
+  - {fileID: 2100000, guid: 6a51d10aeb9b76b4b8633b180686f067, type: 2}
+  - {fileID: 2100000, guid: 6a51d10aeb9b76b4b8633b180686f067, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1919921781375135628
+--- !u!65 &8821405796510369128
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,9 +99,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1082.7535, y: 15.293893, z: 73.15849}
-  m_Center: {x: 0, y: 4.6836104, z: 51.14275}
---- !u!114 &-4180424441909216035
+  m_Size: {x: 800, y: 10.191432, z: 100.25196}
+  m_Center: {x: 0, y: 5.095716, z: -50.12598}
+--- !u!114 &7590451609490398241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,4 +113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa011785268344ca908c24e60775f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
+  catchUpSpeed: 5
