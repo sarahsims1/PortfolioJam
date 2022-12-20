@@ -58,3 +58,37 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/Material/Crate_Textures/crate_Crate_BaseColor.png.meta
+Assets/Material/Crate_Textures/crate_Crate_Height.png.meta
+Assets/Material/Crate_Textures/crate_Crate_Metallic.png.meta
+Assets/Material/Crate_Textures/crate_Crate_Normal.png.meta
+Assets/Material/Crate_Textures/crate_Crate_Roughness.png.meta
+Assets/Material/Glass_Texture/Glass_Glass_Emissive.png.meta
+Assets/Material/Glass_Texture/Glass_Glass_Height.png.meta
+Assets/Material/Glass_Texture/Glass_Glass_Metallic.png.meta
+Assets/Material/Glass_Texture/Glass_Glass_Normal.png.meta
+Assets/Material/Glass_Texture/Glass_Glass_Roughness.png.meta
+Assets/Material/Glass_Texture/opacity.png.meta
+Assets/Material/Laser_Beam/laser_beam_Laser_Beam_BaseColor.png.meta
+Assets/Material/Laser_Beam/laser_beam_Laser_Beam_Emissive.png.meta
+Assets/Material/Laser_Beam/laser_beam_Laser_Beam_Height.png.meta
+Assets/Material/Laser_Beam/laser_beam_Laser_Beam_Metallic.png.meta
+Assets/Material/Laser_Beam/laser_beam_Laser_Beam_Normal.png.meta
+Assets/Material/Laser_Beam/laser_beam_Laser_Beam_Roughness.png.meta
+Assets/Material/Textures_Environment/Crate_Textures/crate_Crate_BaseColor.png.meta
+Assets/Material/Textures_Environment/Crate_Textures/crate_Crate_Height.png.meta
+Assets/Material/Textures_Environment/Crate_Textures/crate_Crate_Metallic.png.meta
+Assets/Material/Textures_Environment/Crate_Textures/crate_Crate_Normal.png.meta
+Assets/Material/Textures_Environment/Crate_Textures/crate_Crate_Roughness.png.meta
+Assets/Material/Textures_Environment/Glass_Texture/Glass_Glass_Emissive.png.meta
+Assets/Material/Textures_Environment/Glass_Texture/Glass_Glass_Height.png.meta
+Assets/Material/Textures_Environment/Glass_Texture/Glass_Glass_Metallic.png.meta
+Assets/Material/Textures_Environment/Glass_Texture/Glass_Glass_Normal.png.meta
+Assets/Material/Textures_Environment/Glass_Texture/Glass_Glass_Roughness.png.meta
+Assets/Material/Textures_Environment/Glass_Texture/opacity.png.meta
+Assets/Material/Textures_Environment/Laser_Beam/laser_beam_Laser_Beam_BaseColor.png.meta
+Assets/Material/Textures_Environment/Laser_Beam/laser_beam_Laser_Beam_Emissive.png.meta
+Assets/Material/Textures_Environment/Laser_Beam/laser_beam_Laser_Beam_Height.png.meta
+Assets/Material/Textures_Environment/Laser_Beam/laser_beam_Laser_Beam_Metallic.png.meta
+Assets/Material/Textures_Environment/Laser_Beam/laser_beam_Laser_Beam_Normal.png.meta
+Assets/Material/Textures_Environment/Laser_Beam/laser_beam_Laser_Beam_Roughness.png.meta
