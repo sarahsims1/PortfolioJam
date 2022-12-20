@@ -7,7 +7,6 @@ using UnityEngine.Rendering;
 public class Death : MonoBehaviour
 {
     public Animator volume;
-
     public float dangerTime;
     private float timeSpent;
     public static bool inDanger;
@@ -40,6 +39,7 @@ public class Death : MonoBehaviour
             {
                 inDanger = false;
                 timeSpent = 0;
+                MusicStarter.SetUnMuffled();
             }
         }
     }
@@ -49,27 +49,24 @@ public class Death : MonoBehaviour
         if (!inDanger)
         {
             inDanger = true;
-            dangerCoolDown = false;
-            StartCoroutine(StartAnimation());
+            volume.Play("fadeDefault");
+
+            MusicStarter.SetMuffled();
         }
-        else if (dangerCoolDown)
+        else 
         {
             DoNotFearTheReaper();
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/MonsterBite");
+            MusicStarter.StopGameMusic();
         }
     }
 
     private void DoNotFearTheReaper()
     {
-        levelManager.speed = 0;
-        levelManager.targetSpeed = 0;
+        LevelManager.speed = 0;
+        LevelManager.targetSpeed = 0;
         if (resetScreen != null)resetScreen.SetActive(true);
     }
 
-    private IEnumerator StartAnimation()
-    {
-        volume.SetBool("start", true);
-        yield return new WaitForSeconds(3f);
-        dangerCoolDown = true;
-        volume.SetBool("start", false);
-    }
 }

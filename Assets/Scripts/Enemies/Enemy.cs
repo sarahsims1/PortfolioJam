@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     private float timePassed;
 
     public GameObject drone;
-    public GameObject meteor;
     void Start()
     {
         timeToSpawn = Random.Range(timeBetweenEnemies.x, timeBetweenEnemies.y);
@@ -18,15 +17,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         timePassed += Time.deltaTime * 1f;
-        if(timePassed >= timeToSpawn && !Staging.lowGravity)
+        if(timePassed >= timeToSpawn)
         {
             Instantiate(drone, transform);
-            timePassed = 0;
-            timeToSpawn = Random.Range(timeBetweenEnemies.x, timeBetweenEnemies.y);
-        }
-        else if(timePassed >= timeToSpawn && Staging.lowGravity)
-        {
-            Instantiate(meteor, transform);
             timePassed = 0;
             timeToSpawn = Random.Range(timeBetweenEnemies.x, timeBetweenEnemies.y);
         }

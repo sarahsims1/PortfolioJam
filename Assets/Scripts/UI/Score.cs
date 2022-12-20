@@ -8,12 +8,15 @@ public class Score : MonoBehaviour
     public static float scoreAct;
     public TMP_Text score;
     public TMP_Text update;
+    public static TMP_Text updateStatic;
     public Animator updateAnim;
+    public static Animator uiAnimator;
     public LevelManager levelManager;
-    private bool obstacleCooldown = true;
 
     void Start()
     {
+        updateStatic = update;
+        uiAnimator = updateAnim;
         scoreAct = 0;
         ObstacleSlow.ObstacleHit += Oof;
         updateAnim = update.gameObject.GetComponent<Animator>();
@@ -25,25 +28,21 @@ public class Score : MonoBehaviour
     }
     private void Update()
     {
-        scoreAct += 0.05f * levelManager.speed;
+        scoreAct += 0.05f * LevelManager.speed;
         score.text = Mathf.RoundToInt(scoreAct).ToString();
     }
-    void Oof()
+    public static void ModifyScore(float modification, string text)
     {
-        if (obstacleCooldown)
-        {
-            scoreAct = scoreAct - 1000f;
-            update.text = "Oof!\n-1000";
-            StartCoroutine(AnimationPlay());
-            obstacleCooldown = false;
-        }
+        scoreAct = scoreAct + modification;
+        updateStatic.text = text;
+        uiAnimator.Play("oof");
     }
 
-    private IEnumerator AnimationPlay()
-    {     
-        updateAnim.SetBool("start", true);
-        yield return new WaitForSeconds(1f);
-        updateAnim.SetBool("start", false);
-        obstacleCooldown = true;
+    public void Oof()
+    {
+        scoreAct = scoreAct - 1000f;
+        update.text = "Oof!\n-1000";
+        updateAnim.Play("oof");
     }
+
 }

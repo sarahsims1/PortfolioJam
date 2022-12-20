@@ -13,8 +13,12 @@ public class Reset : MonoBehaviour
     public void ResetButton()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);      
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FMODUnity.RuntimeManager.GetBus("Bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
-    //Quit Button Code
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
