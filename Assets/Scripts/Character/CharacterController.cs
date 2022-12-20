@@ -15,10 +15,14 @@ public class CharacterController : MonoBehaviour
 
     public float jumpBuffer;
 
+    private FMOD.Studio.EventInstance footstepSound;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         rigidBody.AddForce(new Vector3(0, ogFling, ogFling));
+
+        footstepSound = FMODUnity.RuntimeManager.CreateInstance("event:/Footsteps");
     }
 
     void Update()

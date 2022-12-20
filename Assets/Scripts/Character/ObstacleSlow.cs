@@ -20,19 +20,25 @@ public class ObstacleSlow : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, hitDistance))
         {
-                if (ObstacleHit != null) ObstacleHit();             
+                if (ObstacleHit != null) ObstacleHit();
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/HitWall");
         }
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, destroyDistance))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Instantiate(explosion, hit.collider.gameObject.transform.position, transform.rotation);
-                Destroy(hit.collider.gameObject);  
+                Destroy(hit.collider.gameObject);
+
+                FMODUnity.RuntimeManager.PlayOneShot("event:/ObjectDestroyed");
             }
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
             swing.Play("swing");
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SwordSwing");
         }
     }
 }
