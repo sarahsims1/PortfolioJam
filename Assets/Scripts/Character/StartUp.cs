@@ -8,17 +8,19 @@ public class StartUp : MonoBehaviour
     public Animator mainCam;
     public LevelManager levelManager;
     public GameObject startScreen;
-
-    private FMOD.Studio.EventInstance menuMusic;
     public float fogDistance;
     public float fogBlue;
     private Color color = new Color(0, 0, 0);
+
+    private FMOD.Studio.EventInstance menuMusic;
+    private FMOD.Studio.EventInstance gameMusic;
     private void Start()
     {
         LevelManager.targetSpeed = 0;
         LevelManager.speed = 0;
 
         menuMusic = FMODUnity.RuntimeManager.CreateInstance("event:/MenuMusic");
+        gameMusic = FMODUnity.RuntimeManager.CreateInstance("event:/GameMusic");
         menuMusic.start();
         menuMusic.release();
     }
@@ -27,9 +29,9 @@ public class StartUp : MonoBehaviour
         if(mainCam != null)mainCam.Play("turnaround");
         if (levelManager != null) LevelManager.targetSpeed = 50f;
         startScreen.SetActive(false);
-        
+
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        
+        gameMusic.start();
         while (RenderSettings.fogEndDistance < fogDistance)
         {
             RenderSettings.fogEndDistance += 1 * Time.deltaTime;
@@ -39,7 +41,5 @@ public class StartUp : MonoBehaviour
             color.b += 0.5f * Time.deltaTime;
             RenderSettings.fogColor = color;
         }
-
-        
     }
 }

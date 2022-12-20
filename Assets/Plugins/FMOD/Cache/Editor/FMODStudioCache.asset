@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7110890674599298675
+--- !u!114 &-2410700180483028425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,129 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HitWall
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Desktop/Master 1.bank
   m_EditorClassIdentifier: 
-  Path: event:/HitWall
-  Guid:
-    Data1: 308787797
-    Data2: 1341535858
-    Data3: 255493032
-    Data4: -22688412
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 634
---- !u!114 &-7065557967202579830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterRoar
-  m_EditorClassIdentifier: 
-  Path: event:/MonsterRoar
-  Guid:
-    Data1: 68792596
-    Data2: 1189619003
-    Data3: 1744563364
-    Data4: -46949210
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 100
-  Length: 1741
---- !u!114 &-5429628679713023771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SwordHit
-  m_EditorClassIdentifier: 
-  Path: event:/SwordHit
-  Guid:
-    Data1: -2133899901
-    Data2: 1204004202
-    Data3: -120499037
-    Data4: 1177648621
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 468
---- !u!114 &-4818326401530252773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/GameMusic/InDanger
-  m_EditorClassIdentifier: 
-  Name: InDanger
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1475421328
-    data2: 3348363937
-  Type: 0
-  IsGlobal: 1
-  Labels: []
+  Path: Assets/FMOD SoundBanks/Desktop/Master 1.bank
+  Name: Desktop/Master 1
+  StudioPath: bank:/Master 1
+  lastModified: 638071237542448015
+  FileSizes: []
   Exists: 1
---- !u!114 &-2525726973859692421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SwordSwing
-  m_EditorClassIdentifier: 
-  Path: event:/SwordSwing
-  Guid:
-    Data1: 1388776560
-    Data2: 1165534915
-    Data3: -902016127
-    Data4: 1789627286
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 208
 --- !u!114 &-2268372631014968728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,14 +37,15 @@ MonoBehaviour:
     Data3: 703817601
     Data4: 565608299
   Banks:
+  - {fileID: -2410700180483028425}
   - {fileID: -2055073810356649470}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 25600
+  Length: 0
 --- !u!114 &-2055073810356649470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,63 +61,9 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638071445002327057
+  lastModified: 638069728276499642
   FileSizes: []
   Exists: 1
---- !u!114 &-1640456592400395545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Jet
-  m_EditorClassIdentifier: 
-  Path: event:/Jet
-  Guid:
-    Data1: 788669648
-    Data2: 1229994885
-    Data3: 1881591456
-    Data4: 401557710
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 24520
---- !u!114 &-401000130275810881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterRoarRandom
-  m_EditorClassIdentifier: 
-  Path: event:/MonsterRoarRandom
-  Guid:
-    Data1: 680929761
-    Data2: 1149309932
-    Data3: -1423792733
-    Data4: 1082434977
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,31 +79,20 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 7281547245334573754}
   - {fileID: -2055073810356649470}
+  - {fileID: -2410700180483028425}
   EditorEvents:
   - {fileID: -2268372631014968728}
   - {fileID: 6989916490145377784}
-  - {fileID: -7065557967202579830}
-  - {fileID: 4259602883597175215}
-  - {fileID: -7110890674599298675}
-  - {fileID: -2525726973859692421}
-  - {fileID: -5429628679713023771}
-  - {fileID: 2511427778176802358}
-  - {fileID: 6939415360376650442}
-  - {fileID: 7501799911640768438}
-  - {fileID: -1640456592400395545}
-  - {fileID: -401000130275810881}
-  - {fileID: 6853007602038043125}
-  - {fileID: 7885351261384397387}
-  - {fileID: 5749562328034311054}
+  - {fileID: 5034449588893063563}
   EditorParameters:
-  - {fileID: 4530486818051202980}
+  - {fileID: 8124358000145907601}
   MasterBanks:
   - {fileID: -2055073810356649470}
   StringsBanks:
   - {fileID: 7281547245334573754}
-  cacheTime: 638071445002357057
+  cacheTime: 638071237542498024
   cacheVersion: 131593
---- !u!114 &2511427778176802358
+--- !u!114 &5034449588893063563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,148 +102,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Footsteps
+  m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Footsteps
+  Path: 
   Guid:
-    Data1: 185324428
-    Data2: 1340712345
-    Data3: -2011357271
-    Data4: 1049423383
+    Data1: 562889958
+    Data2: 1321370031
+    Data3: 373716373
+    Data4: 159255749
   Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 708
---- !u!114 &4259602883597175215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/FallingOffMap
-  m_EditorClassIdentifier: 
-  Path: event:/FallingOffMap
-  Guid:
-    Data1: -529417655
-    Data2: 1121232811
-    Data3: -523456603
-    Data4: 1979556984
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4000
---- !u!114 &4530486818051202980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/InDanger
-  m_EditorClassIdentifier: 
-  Name: InDanger
-  StudioPath: parameter:/InDanger
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1475421328
-    data2: 3348363937
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &5749562328034311054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Alarm
-  m_EditorClassIdentifier: 
-  Path: event:/Alarm
-  Guid:
-    Data1: -1040310510
-    Data2: 1280874348
-    Data3: 1518762919
-    Data4: -68592531
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &6853007602038043125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterFootsteps
-  m_EditorClassIdentifier: 
-  Path: event:/MonsterFootsteps
-  Guid:
-    Data1: -795161883
-    Data2: 1232079043
-    Data3: -1882635901
-    Data4: -908139954
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 700
---- !u!114 &6939415360376650442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/GlassShattering
-  m_EditorClassIdentifier: 
-  Path: event:/GlassShattering
-  Guid:
-    Data1: 564117911
-    Data2: 1270726870
-    Data3: -266122078
-    Data4: 1824132850
-  Banks:
-  - {fileID: -2055073810356649470}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
+  - {fileID: -2410700180483028425}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -448,15 +150,15 @@ MonoBehaviour:
     Data3: -89365581
     Data4: -671554073
   Banks:
+  - {fileID: -2410700180483028425}
   - {fileID: -2055073810356649470}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: -4818326401530252773}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 134800
+  Length: 134400
 --- !u!114 &7281547245334573754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,12 +174,12 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638071445002357057
+  lastModified: 638069728276509661
   FileSizes:
   - Name: 
-    Value: 1532
+    Value: 810
   Exists: 1
---- !u!114 &7501799911640768438
+--- !u!114 &8124358000145907601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -486,48 +188,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ObjectDestroyed
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/InDanger
   m_EditorClassIdentifier: 
-  Path: event:/ObjectDestroyed
-  Guid:
-    Data1: -2000161630
-    Data2: 1125852094
-    Data3: 182253466
-    Data4: 1942831017
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &7885351261384397387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterBite
-  m_EditorClassIdentifier: 
-  Path: event:/MonsterBite
-  Guid:
-    Data1: 562889958
-    Data2: 1321370031
-    Data3: 373716373
-    Data4: 159255749
-  Banks:
-  - {fileID: -2055073810356649470}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: InDanger
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1475421328
+    data2: 3348363937
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
