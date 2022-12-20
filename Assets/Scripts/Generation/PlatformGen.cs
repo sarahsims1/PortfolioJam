@@ -6,51 +6,47 @@ using UnityEngine.SceneManagement;
 
 public class PlatformGen : MonoBehaviour
 {
-    public LevelManager levelManager;
     public GameObject[] platforms;
     public GameObject[] lowGravityPlatform;
-    public float distanceToSpawn;
+
     public float buffer;
+
     private GameObject platform;
     private GameObject newPlatform;
-    private MeshRenderer currentRend;
-    private MeshRenderer newRend;
+    private MeshRenderer collider;
+    float distance;
+    public float maxPlatforms;
+    public static float currentPlatforms;
+    public float distanceToSpawn;
+
 
     void Start()
     {
-        
+        currentPlatforms = 0;
         platform = Instantiate(platforms[0], transform.position, transform.rotation);
-        currentRend = platform.GetComponent<MeshRenderer>();
+        collider = platform.GetComponent<MeshRenderer>();
         newPlatform = PlatformSelect();
-        newRend = newPlatform.GetComponent<MeshRenderer>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
-
-        if((transform.position - platform.transform.position).magnitude >= currentRend.bounds.size.z)
-        {
-            Debug.Log(transform.position.z - platform.transform.position.z);
-            Debug.Log(transform.position.z - 70);
+        distance = (transform.position - platform.transform.position).magnitude;
+        if (distance >= collider.bounds.size.z && currentPlatforms < maxPlatforms)
+        {      
             SpawnNew();
         }
     }
 
     void SpawnNew()
     {              
-        newPlatform = Instantiate(newPlatform, transform.localPosition, transform.rotation);
-        CloseGap();
+        newPlatform = Instantiate(newPlatform, transform.position, transform.rotation);
+        newPlatform.transform.position += Vector3.forward *
+                                          (distance
+                                          + collider.bounds.size.z
+                                          - buffer);
         platform = newPlatform;
-        currentRend = platform.GetComponent<MeshRenderer>();       
         newPlatform = PlatformSelect();
-        newRend = newPlatform.GetComponent<MeshRenderer>();
-    }
-
-    void CloseGap()
-    {
-        if((newPlatform.transform.position - platform.transform.position).magnitude > 0)
-        {
-            newPlatform.transform.position = platform.transform.position + Vector3.forward * (currentRend.bounds.size.z - buffer);
-        }
+        collider = newPlatform.GetComponent<MeshRenderer>();
+        currentPlatforms++;
     }
 
     private GameObject PlatformSelect()

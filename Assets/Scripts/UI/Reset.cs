@@ -16,5 +16,8 @@ public class Reset : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);      
     }
 
-    //Quit Button Code
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

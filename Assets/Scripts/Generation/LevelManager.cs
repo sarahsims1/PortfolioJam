@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public float speed;
-    public float targetSpeed;
+    public static float speed;
+    public static float targetSpeed;
     public float acceleration;
 
     private void Start()
