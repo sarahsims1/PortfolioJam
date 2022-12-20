@@ -8,9 +8,15 @@ public class LevelManager : MonoBehaviour
     public static float targetSpeed;
     public float acceleration;
 
+    private FMOD.Studio.EventInstance footsteps;
+
     private void Start()
     {
         ObstacleSlow.ObstacleHit += Slow;
+
+        footsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Footsteps");
+        footsteps.start();
+        footsteps.release();
     }
     private void Update()
     {
@@ -18,6 +24,8 @@ public class LevelManager : MonoBehaviour
         {
             speed += acceleration * Time.deltaTime;
         }
+
+        footsteps.setParameterByName("speed", speed);
     }
 
     void Slow()

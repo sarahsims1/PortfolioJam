@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 
 public class CharacterController : MonoBehaviour
 {
@@ -51,10 +52,12 @@ public class CharacterController : MonoBehaviour
 
         if(Physics.Raycast(transform.position, Vector3.down, out hit, groundDistCheck))
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Grounded", 1);
             return true;
         }
         else
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Grounded", 0);
             return false;
         }
     }

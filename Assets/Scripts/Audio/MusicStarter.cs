@@ -7,11 +7,13 @@ public class MusicStarter : MonoBehaviour
     static FMOD.Studio.EventInstance gameMusic;
     static FMOD.Studio.EventInstance monsterRoarRandom;
     static FMOD.Studio.EventInstance alarm;
-    public GameObject roarSoundEmitter;
+    static FMOD.Studio.EventInstance monsterFootsteps;
     
+    [SerializeField] GameObject roarSoundEmitter;
+
     void Start()
     {
-        
+
     }
 
     void MusicStart()
@@ -53,4 +55,5 @@ public class MusicStarter : MonoBehaviour
     {
         alarm.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+
 }

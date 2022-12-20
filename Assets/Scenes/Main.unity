@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc74b64f5dbe934aaabd3c147b7f1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roarSoundEmitter: {fileID: 0}
+  roarSoundEmitter: {fileID: 17469677}
 --- !u!114 &330585551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,6 +1544,7 @@ MonoBehaviour:
   dangerTime: 6
   levelManager: {fileID: 1514872406}
   resetScreen: {fileID: 589569176}
+  soundEmitter: {fileID: 17469677}
 --- !u!4 &494888811
 Transform:
   m_ObjectHideFlags: 0

@@ -5,10 +5,6 @@ using UnityEngine;
 public class MonsterRoar : MonoBehaviour
 {
     [SerializeField] GameObject soundEmitter;
-    void Start()
-    {
-        
-    }
 
     void StartingRoar()
     {

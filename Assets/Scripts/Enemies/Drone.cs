@@ -16,12 +16,20 @@ public class Drone : MonoBehaviour
 
     private bool done;
 
+    private FMOD.Studio.EventInstance droneFlight;
+    private FMOD.Studio.EventInstance droneRay;
+    private int soundVar = 0;
 
     void Start()
     {
         lazer = transform.GetChild(0).gameObject;
         transform.localPosition += Vector3.up * hieght;
         transform.localPosition += Vector3.right * Random.Range(xOffset.x, xOffset.y);
+
+        droneFlight = FMODUnity.RuntimeManager.CreateInstance("event:/DroneFlight");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(droneFlight, gameObject.transform);
+        droneFlight.start();
+        droneFlight.release();
     }
 
 
@@ -36,19 +44,33 @@ public class Drone : MonoBehaviour
         {
             StartCoroutine(Shoot());
             transform.rotation = Quaternion.Slerp(transform.rotation, finalRot, speed * Time.deltaTime);
+            PlayRaySound();
         }
         else if(done)
         {
             transform.parent = null;
             transform.position += Vector3.up * speed * Time.deltaTime;
+
+            droneFlight.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 
     private IEnumerator Shoot()
     {
         lazer.SetActive(true);
+        
         yield return new WaitForSeconds(lazerDuration);
         lazer.SetActive(false);
         done = true;
+    }
+
+    void PlayRaySound()
+    {
+        if (soundVar == 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/DroneRay", gameObject);
+            soundVar = 1;
+        }
+        
     }
 }

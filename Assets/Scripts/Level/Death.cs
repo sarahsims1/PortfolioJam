@@ -15,6 +15,8 @@ public class Death : MonoBehaviour
 
     public GameObject resetScreen;
 
+    private FMOD.Studio.EventInstance monsterFootsteps;
+
     void Awake()
     {
         inDanger = false;
@@ -39,7 +41,9 @@ public class Death : MonoBehaviour
             {
                 inDanger = false;
                 timeSpent = 0;
+
                 MusicStarter.SetUnMuffled();
+                StopMonsterSounds();
             }
         }
     }
@@ -52,6 +56,7 @@ public class Death : MonoBehaviour
             volume.Play("fadeDefault");
 
             MusicStarter.SetMuffled();
+            MonsterSounds();
         }
         else 
         {
@@ -69,4 +74,15 @@ public class Death : MonoBehaviour
         if (resetScreen != null)resetScreen.SetActive(true);
     }
 
+    void MonsterSounds()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MonsterRoarRandom");
+        monsterFootsteps = FMODUnity.RuntimeManager.CreateInstance("event:/MonsterFootsteps");
+        monsterFootsteps.start();
+        monsterFootsteps.release();
+    }
+    void StopMonsterSounds()
+    {
+        monsterFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
 }
