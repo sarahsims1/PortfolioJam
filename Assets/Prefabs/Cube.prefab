@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6435347267232220202}
   - component: {fileID: 8821405796510369128}
   - component: {fileID: 7590451609490398241}
+  - component: {fileID: -9107506201655527487}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Platform
@@ -113,4 +114,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa011785268344ca908c24e60775f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catchUpSpeed: 5
+--- !u!64 &-9107506201655527487
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784866953594433121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3991978142460923257, guid: 224c145656a9c5d49b45fccd7a9382b2, type: 3}
