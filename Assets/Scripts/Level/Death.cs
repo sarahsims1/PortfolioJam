@@ -39,6 +39,8 @@ public class Death : MonoBehaviour
             {
                 inDanger = false;
                 timeSpent = 0;
+
+                MusicStarter.SetUnMuffled();
             }
         }
     }
@@ -49,10 +51,17 @@ public class Death : MonoBehaviour
         {
             inDanger = true;
             volume.Play("fadeDefault");
+            dangerCoolDown = false;
+            StartCoroutine(StartAnimation());
+
+            MusicStarter.SetMuffled();
         }
         else 
         {
             DoNotFearTheReaper();
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/MonsterBite");
+            MusicStarter.StopGameMusic();
         }
     }
 
