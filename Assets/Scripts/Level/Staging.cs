@@ -27,12 +27,16 @@ public class Staging : MonoBehaviour
                 Physics.gravity = new Vector3(0, gravityChange, 0);
                 text.text = "Gravity Offline";
                 anime.Play("gravity");
+
+                FMODUnity.RuntimeManager.PlayOneShot("event:/GravityDown");
             }
             else
             {
                 Physics.gravity = new Vector3(0, -9.8f, 0);
                 text.text = "Gravity Back Online";
                 anime.Play("gravity");
+
+                FMODUnity.RuntimeManager.PlayOneShot("event:/GravityUp");
             }
         }
     }

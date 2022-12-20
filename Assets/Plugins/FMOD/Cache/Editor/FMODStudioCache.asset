@@ -27,6 +27,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 708
+--- !u!114 &-8020439829749350357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Alarm/InDanger
+  m_EditorClassIdentifier: 
+  Name: InDanger
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1475421328
+    data2: 3348363937
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7966125162908579314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +75,34 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-7821920600794255137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/StartingAlarm
+  m_EditorClassIdentifier: 
+  Path: event:/StartingAlarm
+  Guid:
+    Data1: 1289788656
+    Data2: 1160517393
+    Data3: -827237454
+    Data4: 1463432119
+  Banks:
+  - {fileID: -2055073810356649470}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5139689114139667882}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &-6366001676555545341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +130,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 208
+--- !u!114 &-5507112889723097873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GravityUp
+  m_EditorClassIdentifier: 
+  Path: event:/GravityUp
+  Guid:
+    Data1: 217791771
+    Data2: 1224479622
+    Data3: 1704912778
+    Data4: 102679688
+  Banks:
+  - {fileID: -2055073810356649470}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2177
+--- !u!114 &-5139689114139667882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/StartingAlarm/InDanger
+  m_EditorClassIdentifier: 
+  Name: InDanger
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1475421328
+    data2: 3348363937
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-3973881176645479009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +207,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1750
+  Length: 4000
 --- !u!114 &-2984245935135007402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +304,7 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638071529930805809
+  lastModified: 638071673648221232
   FileSizes: []
   Exists: 1
 --- !u!114 &-1745330995851960028
@@ -231,6 +334,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-972012754781919410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Alarm3D
+  m_EditorClassIdentifier: 
+  Path: event:/Alarm3D
+  Guid:
+    Data1: 604202889
+    Data2: 1157761207
+    Data3: 1521708701
+    Data4: -987937613
+  Banks:
+  - {fileID: -2055073810356649470}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-543698951278096957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,14 +423,45 @@ MonoBehaviour:
   - {fileID: 5845898656946561159}
   - {fileID: -543698951278096957}
   - {fileID: -3973881176645479009}
+  - {fileID: -5507112889723097873}
+  - {fileID: 188493462476675903}
+  - {fileID: -7821920600794255137}
+  - {fileID: -972012754781919410}
   EditorParameters:
   - {fileID: 8124358000145907601}
   MasterBanks:
   - {fileID: -2055073810356649470}
   StringsBanks:
   - {fileID: 7281547245334573754}
-  cacheTime: 638071529930865828
+  cacheTime: 638071673648271217
   cacheVersion: 131593
+--- !u!114 &188493462476675903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GravityDown
+  m_EditorClassIdentifier: 
+  Path: event:/GravityDown
+  Guid:
+    Data1: 831920015
+    Data2: 1104128255
+    Data3: -1509601905
+    Data4: 425466257
+  Banks:
+  - {fileID: -2055073810356649470}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2177
 --- !u!114 &1388555137723108717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,10 +704,10 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638071529930865828
+  lastModified: 638071673648271217
   FileSizes:
   - Name: 
-    Value: 1658
+    Value: 1842
   Exists: 1
 --- !u!114 &8124358000145907601
 MonoBehaviour:
@@ -620,12 +781,13 @@ MonoBehaviour:
   Banks:
   - {fileID: -2055073810356649470}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -8020439829749350357}
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 4000
 --- !u!114 &9156474503577326421
 MonoBehaviour:
   m_ObjectHideFlags: 0

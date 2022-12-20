@@ -32,6 +32,7 @@ public class StartUp : MonoBehaviour
 
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         gameMusic.start();
+
         while (RenderSettings.fogEndDistance < fogDistance)
         {
             RenderSettings.fogEndDistance += 1 * Time.deltaTime;

@@ -6,6 +6,7 @@ public class MusicStarter : MonoBehaviour
 {
     static FMOD.Studio.EventInstance gameMusic;
     static FMOD.Studio.EventInstance monsterRoarRandom;
+    static FMOD.Studio.EventInstance alarm;
     public GameObject roarSoundEmitter;
     
     void Start()
@@ -34,10 +35,22 @@ public class MusicStarter : MonoBehaviour
     {
         gameMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+
     public static void MonsterRoarRandom()
     {
         monsterRoarRandom = FMODUnity.RuntimeManager.CreateInstance("event:/MonsterRoarRandom");
         monsterRoarRandom.start();
         monsterRoarRandom.release();
+    }
+
+    public static void StartAlarm()
+    {
+        alarm = FMODUnity.RuntimeManager.CreateInstance("event:/Alarm");
+        alarm.start();
+        alarm.release();
+    }
+    public static void StopAlarm()
+    {
+        alarm.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
