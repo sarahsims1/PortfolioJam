@@ -25,8 +25,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -574398516705161077}
-  - {fileID: -83363447113819725}
+  - {fileID: 6148445697649319907}
+  - {fileID: 6186739084987022676}
   MinDistance: 1
   MaxDistance: 20
   Length: 25283
@@ -45,7 +45,7 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master 1.bank
   Name: Desktop/Master 1
   StudioPath: bank:/Master 1
-  lastModified: 638071862316017774
+  lastModified: 638071237542448015
   FileSizes: []
   Exists: 1
 --- !u!114 &-7966125162908579314
@@ -166,30 +166,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/StartingAlarm/InDanger
-  m_EditorClassIdentifier: 
-  Name: InDanger
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1475421328
-    data2: 3348363937
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-4660682700178771001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Alarm/InDanger
   m_EditorClassIdentifier: 
   Name: InDanger
   StudioPath: 
@@ -353,7 +329,7 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638071860560376407
+  lastModified: 638071577919693715
   FileSizes: []
   Exists: 1
 --- !u!114 &-1745330995851960028
@@ -411,30 +387,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &-574398516705161077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps/Grounded
-  m_EditorClassIdentifier: 
-  Name: Grounded
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 124299491
-    data2: 403635053
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
 --- !u!114 &-543698951278096957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +414,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 40
   Length: 2250
---- !u!114 &-83363447113819725
+--- !u!114 &-27778423115557713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,18 +424,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps/Speed
+  m_Name: parameter:/Alarm/InDanger
   m_EditorClassIdentifier: 
-  Name: Speed
+  Name: InDanger
   StudioPath: 
   Min: 0
-  Max: 60
+  Max: 1
   Default: 0
   ID:
-    data1: 1275811728
-    data2: 1407936650
+    data1: 1475421328
+    data2: 3348363937
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &11400000
@@ -533,7 +485,7 @@ MonoBehaviour:
   - {fileID: -2055073810356649470}
   StringsBanks:
   - {fileID: 7281547245334573754}
-  cacheTime: 638071862316244152
+  cacheTime: 638071577919743729
   cacheVersion: 131593
 --- !u!114 &188493462476675903
 MonoBehaviour:
@@ -710,6 +662,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 35
   Length: 2750
+--- !u!114 &6148445697649319907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Grounded
+  m_EditorClassIdentifier: 
+  Name: Grounded
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 124299491
+    data2: 403635053
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6186739084987022676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Speed
+  m_EditorClassIdentifier: 
+  Name: Speed
+  StudioPath: 
+  Min: 0
+  Max: 60
+  Default: 0
+  ID:
+    data1: 1275811728
+    data2: 1407936650
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &6273941612988235350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,7 +810,7 @@ MonoBehaviour:
   Path: Assets/FMOD SoundBanks/Desktop/Master.strings.bank
   Name: Desktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638071860560396413
+  lastModified: 638071577919743729
   FileSizes:
   - Name: 
     Value: 1930
@@ -892,7 +892,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4660682700178771001}
+  - {fileID: -27778423115557713}
   MinDistance: 1
   MaxDistance: 20
   Length: 4000

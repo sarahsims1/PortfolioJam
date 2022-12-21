@@ -16,6 +16,7 @@ public class Decimator : MonoBehaviour
         if(other.tag == "Platform")
         {
             PlatformGen.currentPlatforms--;
+            Destroy(other.gameObject);
         }
         else
         {

@@ -11,7 +11,8 @@ public class Drone : MonoBehaviour
     public float rotSpeed;
     public Quaternion finalRot;
 
-    private GameObject lazer;
+    public GameObject lazerObject;
+    public GameObject lazer;
     public float lazerDuration;
 
     private bool done;
@@ -22,7 +23,6 @@ public class Drone : MonoBehaviour
 
     void Start()
     {
-        lazer = transform.GetChild(0).gameObject;
         transform.localPosition += Vector3.up * hieght;
         transform.localPosition += Vector3.right * Random.Range(xOffset.x, xOffset.y);
 
@@ -40,10 +40,10 @@ public class Drone : MonoBehaviour
         {
             transform.localPosition += Vector3.forward * speed * Time.deltaTime;
         }
-        else if(transform.localPosition.z >= zOffset && transform.localRotation != finalRot)
+        else if(transform.localPosition.z >= zOffset && lazerObject.transform.localRotation != finalRot)
         {
             StartCoroutine(Shoot());
-            transform.rotation = Quaternion.Slerp(transform.rotation, finalRot, speed * Time.deltaTime);
+            lazerObject.transform.localRotation = Quaternion.Slerp(lazerObject.transform.localRotation, finalRot, rotSpeed * Time.deltaTime);
             PlayRaySound();
         }
         else if(done)

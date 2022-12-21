@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: -8750812095817956327}
   m_Layer: 0
   m_Name: Crate_Obstacle
-  m_TagString: Destructable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8ec056776aacc40997636b4e473950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
+  upForce: 0.1
 --- !u!1 &3498437834862934806
 GameObject:
   m_ObjectHideFlags: 0

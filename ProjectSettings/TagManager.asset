@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Destructable
+  - Drone
   layers:
   - Default
   - TransparentFX

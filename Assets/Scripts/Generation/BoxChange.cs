@@ -5,8 +5,9 @@ using UnityEngine;
 public class BoxChange : MonoBehaviour
 {
     private Rigidbody rigidbody;
-    public float delay;
+    private bool gravityLow;
     private float time;
+    public float upForce;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -15,13 +16,17 @@ public class BoxChange : MonoBehaviour
     void Update()
     {
         
-        if(Staging.lowGravity)
+        if(Staging.lowGravity && !gravityLow)
         {
-            rigidbody.isKinematic = false;
+            rigidbody.useGravity = false;
+            rigidbody.AddForce(Vector3.up * upForce, ForceMode.Impulse);
+            rigidbody.AddTorque(Vector3.up * upForce, ForceMode.Impulse);
+            gravityLow = true;
         }
-        else
+        else if(!Staging.lowGravity)
         {
-            rigidbody.isKinematic = true;
+            gravityLow = false;
+            rigidbody.useGravity = true;
         }
     }
 }

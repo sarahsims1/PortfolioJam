@@ -9,13 +9,14 @@ public class StartUp : MonoBehaviour
     public LevelManager levelManager;
     public GameObject startScreen;
     public float fogDistance;
-    public float fogBlue;
-    private Color color = new Color(0, 0, 0);
+    public float fadeSpeed;
+    private bool fadeStart;
 
     private FMOD.Studio.EventInstance menuMusic;
     private FMOD.Studio.EventInstance gameMusic;
     private void Start()
     {
+        MusicStarter.SetUnMuffled();
         LevelManager.targetSpeed = 0;
         LevelManager.speed = 0;
 
@@ -23,6 +24,18 @@ public class StartUp : MonoBehaviour
         gameMusic = FMODUnity.RuntimeManager.CreateInstance("event:/GameMusic");
         menuMusic.start();
         menuMusic.release();
+    }
+
+    private void Update()
+    {
+        if(RenderSettings.fogEndDistance >= fogDistance)
+        {
+            return;
+        }
+        else if(fadeStart)
+        {
+            RenderSettings.fogEndDistance += fadeSpeed * Time.deltaTime;
+        }
     }
     public void Starting()
     {
@@ -32,15 +45,6 @@ public class StartUp : MonoBehaviour
 
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         gameMusic.start();
-
-        while (RenderSettings.fogEndDistance < fogDistance)
-        {
-            RenderSettings.fogEndDistance += 1 * Time.deltaTime;
-        }
-        while(RenderSettings.fogColor.b < fogBlue)
-        {
-            color.b += 0.5f * Time.deltaTime;
-            RenderSettings.fogColor = color;
-        }
+        fadeStart = true;
     }
 }

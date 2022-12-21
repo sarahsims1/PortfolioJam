@@ -31,7 +31,7 @@ public class ObstacleGenerator : MonoBehaviour
     void SpawnNew()
     {
         Vector3 spawnPoint = transform.localPosition + new Vector3(Random.Range(obstacleRandomness.x, obstacleRandomness.y), 0, Random.Range(obstacleRandomness.x, obstacleRandomness.y));
-        obstacle = Instantiate(queuedObstacle.gameObject, spawnPoint, transform.rotation);
+        obstacle = Instantiate(queuedObstacle.gameObject, spawnPoint, queuedObstacle.transform.rotation);
         queuedObstacle = platforms[Random.Range(0, platforms.Length)];
     }
 }
