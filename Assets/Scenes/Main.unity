@@ -727,6 +727,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229715184}
   m_CullTransparentMesh: 1
+--- !u!1 &276272545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276272546}
+  m_Layer: 5
+  m_Name: RoarEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &276272546
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276272545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1577831867}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1743, y: 1045}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &310583321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9288905e1ea4c4d9eb7bd3c3afc2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEmitter: {fileID: 0}
+  soundEmitter: {fileID: 276272545}
 --- !u!114 &330585550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc74b64f5dbe934aaabd3c147b7f1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roarSoundEmitter: {fileID: 0}
+  roarSoundEmitter: {fileID: 276272545}
 --- !u!114 &330585551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4064,6 +4100,7 @@ RectTransform:
   - {fileID: 589569180}
   - {fileID: 1938059133}
   - {fileID: 651516879}
+  - {fileID: 276272546}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
