@@ -34,6 +34,7 @@ public class ObstacleSlow : MonoBehaviour
                 Destroy(hit.collider.gameObject);
                 Score.ModifyScore(1000, "Nice! +1000");
                 FMODUnity.RuntimeManager.PlayOneShot("event:/ObjectDestroyed");
+                //if glass, FMODUnity.RuntimeManager.PlayOneShot("event:/GlassShattering");
             }
         }
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, hitDistance) && timeSinceLast > coolDown)
