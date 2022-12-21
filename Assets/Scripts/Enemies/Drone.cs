@@ -68,9 +68,12 @@ public class Drone : MonoBehaviour
     {
         if (soundVar == 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/DroneRay", gameObject);
+            droneRay = FMODUnity.RuntimeManager.CreateInstance("event:/DroneRay");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(droneRay, gameObject.transform);
+            droneRay.start();
+            droneRay.release();
             soundVar = 1;
         }
-        
     }
+
 }
