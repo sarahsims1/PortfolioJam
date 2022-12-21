@@ -441,8 +441,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Desktop/Master
-  Banks:
-  - Desktop/Master 1
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

@@ -45,6 +45,7 @@ public class StartUp : MonoBehaviour
 
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         gameMusic.start();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MonsterRoar");
         fadeStart = true;
     }
 }
