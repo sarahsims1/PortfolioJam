@@ -14,6 +14,7 @@ public class StartUp : MonoBehaviour
 
     private FMOD.Studio.EventInstance menuMusic;
     private FMOD.Studio.EventInstance gameMusic;
+
     private void Start()
     {
         MusicStarter.SetUnMuffled();
@@ -42,7 +43,6 @@ public class StartUp : MonoBehaviour
         if(mainCam != null)mainCam.Play("turnaround");
         if (levelManager != null) LevelManager.targetSpeed = 50f;
         startScreen.SetActive(false);
-
         menuMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         gameMusic.start();
         FMODUnity.RuntimeManager.PlayOneShot("event:/MonsterRoar");

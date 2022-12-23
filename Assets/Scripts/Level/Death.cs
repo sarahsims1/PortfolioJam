@@ -16,7 +16,6 @@ public class Death : MonoBehaviour
     public GameObject resetScreen;
 
     private FMOD.Studio.EventInstance monsterFootsteps;
-    private FMOD.Studio.Bus fmodBus;
 
     void Awake()
     {
@@ -63,10 +62,8 @@ public class Death : MonoBehaviour
         {
             DoNotFearTheReaper();
 
-            fmodBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
-            fmodBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             FMODUnity.RuntimeManager.PlayOneShot("event:/MonsterBite");
-            FMODUnity.RuntimeManager.PlayOneShot("event:/DeathPiano");
+            MusicStarter.StopGameMusic();
         }
     }
 

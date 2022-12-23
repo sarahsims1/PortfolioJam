@@ -44,7 +44,6 @@ public class Drone : MonoBehaviour
         {
             StartCoroutine(Shoot());
             lazerObject.transform.localRotation = Quaternion.Slerp(lazerObject.transform.localRotation, finalRot, rotSpeed * Time.deltaTime);
-            PlayRaySound();
         }
         else if(done)
         {
@@ -57,8 +56,8 @@ public class Drone : MonoBehaviour
 
     private IEnumerator Shoot()
     {
+        PlayRaySound();
         lazer.SetActive(true);
-        
         yield return new WaitForSeconds(lazerDuration);
         lazer.SetActive(false);
         done = true;

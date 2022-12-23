@@ -20,7 +20,7 @@ public class ObstacleSlow : MonoBehaviour
 
     public float explosionOffset;
 
-    int frameSkip = 0;
+
 
     private void Update()
     {
@@ -28,17 +28,22 @@ public class ObstacleSlow : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, destroyDistance))
         {
-            if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject.tag == "Destructable")
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Instantiate(explosion, hit.collider.gameObject.transform.position + Vector3.up * explosionOffset, transform.rotation);
-                Destroy(hit.collider.gameObject);
-                Score.ModifyScore(1000, "Nice! +1000");
-
-                if (hit.collider.tag == "Drone")
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/ObjectDestroyed");
-                else
+                if (hit.collider.gameObject.tag == "Destructable")
+                {
+                    Instantiate(explosion, hit.collider.gameObject.transform.position + Vector3.up * explosionOffset, transform.rotation);
+                    Destroy(hit.collider.gameObject);
+                    Score.ModifyScore(1000, "Nice! +1000");
                     FMODUnity.RuntimeManager.PlayOneShot("event:/GlassShattering");
-                
+                }
+                if (hit.collider.gameObject.tag == "Drone")
+                {
+                    Instantiate(explosion, hit.collider.gameObject.transform.position + Vector3.up * explosionOffset, transform.rotation);
+                    Destroy(hit.collider.gameObject);
+                    Score.ModifyScore(1000, "Unstoppable! +2000");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/ObjectDestroyed");
+                }
             }
         }
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, hitDistance) && timeSinceLast > coolDown)

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4211346550341001590}
   - component: {fileID: 2131682661376497084}
   - component: {fileID: 8763510905021909363}
-  - component: {fileID: 7334502066584145061}
   - component: {fileID: 5371342219495600181}
+  - component: {fileID: 477772633176343226}
   m_Layer: 0
   m_Name: Moda
   m_TagString: Platform
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 108827971746219900}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.355545, y: -0.0000019073486, z: 29.390415}
-  m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1088903643842359016}
@@ -99,19 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fa011785268344ca908c24e60775f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &7334502066584145061
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108827971746219900}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 871.6697, y: 17.076197, z: 401.82846}
-  m_Center: {x: 0, y: 5.574637, z: -200.67513}
 --- !u!64 &5371342219495600181
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -126,6 +113,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5615123215129717631, guid: 6a642c4ec038ceb42814884ffd25def3, type: 3}
+--- !u!65 &477772633176343226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108827971746219900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.716697, y: 0.11734835, z: 4.0000024}
+  m_Center: {x: 0, y: 0.058674175, z: -1.9999996}
 --- !u!1 &4921888534034593809
 GameObject:
   m_ObjectHideFlags: 0
