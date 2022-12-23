@@ -73,6 +73,6 @@ public class Drone : MonoBehaviour
             droneRay.release();
             soundVar = 1;
         }
-        
     }
+
 }
