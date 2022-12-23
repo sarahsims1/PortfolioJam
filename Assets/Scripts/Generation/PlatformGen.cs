@@ -30,7 +30,7 @@ public class PlatformGen : MonoBehaviour
     private void FixedUpdate()
     {
         distance = (transform.position - platform.transform.position).magnitude;
-        if (distance >= collider.bounds.size.z && currentPlatforms < maxPlatforms)
+        if (distance >= platform.GetComponent<MeshRenderer>().bounds.size.z && currentPlatforms < maxPlatforms)
         {      
             SpawnNew();
         }

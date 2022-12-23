@@ -44,7 +44,6 @@ public class Drone : MonoBehaviour
         {
             StartCoroutine(Shoot());
             lazerObject.transform.localRotation = Quaternion.Slerp(lazerObject.transform.localRotation, finalRot, rotSpeed * Time.deltaTime);
-            PlayRaySound();
         }
         else if(done)
         {
@@ -57,8 +56,8 @@ public class Drone : MonoBehaviour
 
     private IEnumerator Shoot()
     {
+        PlayRaySound();
         lazer.SetActive(true);
-        
         yield return new WaitForSeconds(lazerDuration);
         lazer.SetActive(false);
         done = true;
@@ -68,7 +67,10 @@ public class Drone : MonoBehaviour
     {
         if (soundVar == 0)
         {
-            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/DroneRay", gameObject);
+            droneRay = FMODUnity.RuntimeManager.CreateInstance("event:/DroneRay");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(droneRay, gameObject.transform);
+            droneRay.start();
+            droneRay.release();
             soundVar = 1;
         }
         

@@ -35,14 +35,14 @@ public class ObstacleSlow : MonoBehaviour
                     Instantiate(explosion, hit.collider.gameObject.transform.position + Vector3.up * explosionOffset, transform.rotation);
                     Destroy(hit.collider.gameObject);
                     Score.ModifyScore(1000, "Nice! +1000");
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/ObjectDestroyed");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/GlassShattering");
                 }
                 if (hit.collider.gameObject.tag == "Drone")
                 {
                     Instantiate(explosion, hit.collider.gameObject.transform.position + Vector3.up * explosionOffset, transform.rotation);
                     Destroy(hit.collider.gameObject);
                     Score.ModifyScore(1000, "Unstoppable! +2000");
-                    //FMOd drone destroy sound
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/ObjectDestroyed");
                 }
             }
         }
