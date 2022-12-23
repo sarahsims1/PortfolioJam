@@ -56,6 +56,7 @@ public class ObstacleSlow : MonoBehaviour
         {
             swing.Play("swing");
             FMODUnity.RuntimeManager.PlayOneShot("event:/SwordSwing");
-        }    
+        }  
+        
     }
 }
