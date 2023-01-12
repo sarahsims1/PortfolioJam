@@ -24,8 +24,8 @@ public class LevelManager : MonoBehaviour
         {
             speed += acceleration * Time.deltaTime;
         }
-
-        footsteps.setParameterByName("speed", speed);
+        
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("speed", speed);
     }
 
     void Slow()
